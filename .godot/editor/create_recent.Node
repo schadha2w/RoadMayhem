@@ -1,0 +1,5 @@
+CharacterBody2D
+ColorRect
+Area2D
+Camera2D
+CollisionShape2D
