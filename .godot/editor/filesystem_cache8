@@ -1,5 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ::res://::1724977694
 icon.svg::CompressedTexture2D::8509153634091156757::1724976064::1724977695::1::::<><>::
 ::res://Assets/::1724976536
@@ -19,4 +20,10 @@ Player.tscn::PackedScene::9009888582412185735::1725579449::0::1::::<><>::res://S
 ::res://Scripts/::1725579449
 camera.gd::GDScript::-1::1725579449::0::1::::<>Camera2D<>::
 Road 2.png::CompressedTexture2D::3409538643990778735::1725579449::1725579487::1::::<><>::
+>>>>>>> Stashed changes
+=======
+::res://::1725488599
+icon.svg::CompressedTexture2D::8509153634091156757::1724977733::1725488601::1::::<><>::
+::res://Scene/::1724977733
+main.tscn::PackedScene::9014899005307949348::1724977733::0::1::::<><>::
 >>>>>>> Stashed changes
