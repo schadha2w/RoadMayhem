@@ -1,22 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1mpswf3cyen4"]
+[gd_scene load_steps=4 format=3 uid="uid://dvqsnim8gctw0"]
 
 [ext_resource type="Script" path="res://Scene/player.gd" id="1_3te80"]
+[ext_resource type="Texture2D" uid="uid://dfraweu1dhouu" path="res://Assets/whitecar2.png" id="2_j2efs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5gue"]
-size = Vector2(90, 141)
+size = Vector2(72, 154)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_3te80")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(41, 68.5)
+position = Vector2(44, 75)
 shape = SubResource("RectangleShape2D_a5gue")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -6.0
 offset_top = -2.0
 offset_right = 87.0
 offset_bottom = 140.0
 color = Color(0.796796, 0.0600978, 3.85046e-07, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(58, 108.5)
+scale = Vector2(0.839506, 0.812346)
+texture = ExtResource("2_j2efs")

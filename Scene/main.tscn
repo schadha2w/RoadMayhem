@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://d1o5cmmtxhvu7"]
 
-[ext_resource type="PackedScene" path="res://Scene/Player.tscn" id="1_647k2"]
+[ext_resource type="PackedScene" uid="uid://dvqsnim8gctw0" path="res://Scene/Player.tscn" id="1_647k2"]
 [ext_resource type="Texture2D" uid="uid://kmvww403s6u6" path="res://Assets/road.png" id="1_blpgp"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="2_beba1"]
 [ext_resource type="Texture2D" uid="uid://dpxg0tsgx42f3" path="res://Assets/Road 2.png" id="3_lbovs"]
