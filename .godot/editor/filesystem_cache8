@@ -1,13 +1,16 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1725579997
+::res://::1725580563
 icon.svg::CompressedTexture2D::8509153634091156757::1724977733::1725580055::1::::<><>::
-::res://Assets/::1725579997
+::res://Assets/::1725580575
+orangecar.png::CompressedTexture2D::8373069542466873510::1725580561::1725580563::1::::<><>::
 Road 2.png::CompressedTexture2D::8259985366852036682::1725579997::1725580055::1::::<><>::
 road.png::CompressedTexture2D::727976515230122867::1725579997::1725580055::1::::<><>::
-::res://Scene/::1725579997
-main.tscn::PackedScene::9014899005307949348::1725579882::0::1::::<><>::
+whitecar2.png::CompressedTexture2D::7545340220729499932::1725580575::1725580575::1::::<><>::
+whitecar.png::CompressedTexture2D::4013997531309383649::1725580570::1725580570::1::::<><>::
+::res://Scene/::1725580322
+main.tscn::PackedScene::9014899005307949348::1725580322::0::1::::<><>::res://Scene/Player.tscn<>uid://kmvww403s6u6::::res://Assets/road.png<>res://Scripts/camera.gd<>uid://dpxg0tsgx42f3::::res://Assets/Road 2.png
 player.gd::GDScript::-1::1725579997::0::1::::<>CharacterBody2D<>::
 Player.tscn::PackedScene::-1::1725579997::0::1::::<><>::
-::res://Scripts/::1725579997
+::res://Scripts/::1725580055
 camera.gd::GDScript::-1::1725579997::0::1::::<>Camera2D<>::
 Road 2.png::CompressedTexture2D::3409538643990778735::1725579997::1725580055::1::::<><>::
