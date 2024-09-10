@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1725580563
+::res://::1725929595
 icon.svg::CompressedTexture2D::8509153634091156757::1724977733::1725580055::1::::<><>::
 ::res://Assets/::1725580575
 orangecar.png::CompressedTexture2D::8373069542466873510::1725580561::1725580563::1::::<><>::
@@ -7,14 +7,14 @@ Road 2.png::CompressedTexture2D::8259985366852036682::1725579997::1725580055::1:
 road.png::CompressedTexture2D::727976515230122867::1725579997::1725580055::1::::<><>::
 whitecar2.png::CompressedTexture2D::7545340220729499932::1725580575::1725580575::1::::<><>::
 whitecar.png::CompressedTexture2D::4013997531309383649::1725580570::1725580570::1::::<><>::
-::res://Scene/::1725582193
+::res://Scene/::1725929555
 highway-167255.ogg::AudioStreamOggVorbis::6158763263296068311::1724015576::1725582014::1::::<><>::
 Main Menu 1.png::CompressedTexture2D::2504045447228145117::1723676434::1725582208::1::::<><>::
-main.tscn::PackedScene::9014899005307949348::1725581101::0::1::::<><>::uid://dvqsnim8gctw0::::res://Scene/Player.tscn<>uid://kmvww403s6u6::::res://Assets/road.png<>res://Scripts/camera.gd<>uid://dpxg0tsgx42f3::::res://Assets/Road 2.png
+main.tscn::PackedScene::9014899005307949348::1725929555::0::1::::<><>::uid://dvqsnim8gctw0::::res://Scene/Player.tscn<>uid://kmvww403s6u6::::res://Assets/road.png<>res://Scripts/camera.gd<>uid://dpxg0tsgx42f3::::res://Assets/Road 2.png
 menu.gd::GDScript::-1::1723756442::0::1::::<>Control<>::
-menu.tscn::PackedScene::-1::1725581495::0::1::::<><>::
+menu.tscn::PackedScene::4735574116691114194::1725929555::0::1::::<><>::uid://bbw8i6v8xh7cr::::res://Scene/Main Menu 1.png<>res://Scene/menu.gd<>uid://ct0l6wnr1yty2::::res://Scene/highway-167255.ogg
 player.gd::GDScript::-1::1725579997::0::1::::<>CharacterBody2D<>::
-Player.tscn::PackedScene::8667374372965442145::1725581101::0::1::::<><>::res://Scene/player.gd<>uid://dfraweu1dhouu::::res://Assets/whitecar2.png
+Player.tscn::PackedScene::8667374372965442145::1725929555::0::1::::<><>::res://Scene/player.gd<>uid://dfraweu1dhouu::::res://Assets/whitecar2.png
 the money go where I go.ogg::AudioStreamOggVorbis::846773606069051780::1723679244::1725582117::1::::<><>::
 upload_img_93104887_08_28_2024_17_05_30_197766_4185241739344716361-transformed (1).png::CompressedTexture2D::1446044442854182412::1724890328::1725582117::1::::<><>::
 ::res://Scripts/::1725580055

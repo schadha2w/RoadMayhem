@@ -9,16 +9,16 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 776.0
-offset_bottom = 327.0
+offset_right = 1398.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ubuvw")
 
 [node name="MainMenu1" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(966, 488)
-scale = Vector2(1.50156, 1.36389)
+position = Vector2(262.688, 478.625)
+scale = Vector2(1.26924, 1.33993)
 texture = ExtResource("1_2ftqv")
 
 [node name="PlayButton" type="Button" parent="MainMenu1"]
