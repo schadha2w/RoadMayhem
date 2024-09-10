@@ -6,8 +6,8 @@
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="2_beba1"]
 [ext_resource type="Texture2D" uid="uid://dpxg0tsgx42f3" path="res://Assets/Road 2.png" id="3_lbovs"]
 [ext_resource type="Script" path="res://Scripts/collisionForCar.gd" id="5_a614i"]
-[ext_resource type="PackedScene" path="res://Scene/car2.tscn" id="5_hgljf"]
-[ext_resource type="PackedScene" path="res://Scene/car1.tscn" id="6_yciaq"]
+[ext_resource type="PackedScene" uid="uid://bxol8yb2tc1su" path="res://Scene/car2.tscn" id="5_hgljf"]
+[ext_resource type="PackedScene" uid="uid://bc8qfot4g1kts" path="res://Scene/car1.tscn" id="6_yciaq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ew082"]
 size = Vector2(548, 20)
