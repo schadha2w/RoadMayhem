@@ -14,14 +14,6 @@ shape = SubResource("RectangleShape2D_a5gue")
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = -6.0
-offset_top = -2.0
-offset_right = 87.0
-offset_bottom = 140.0
-color = Color(0.796796, 0.0600978, 3.85046e-07, 1)
-
 [node name="Whitecar2" type="Sprite2D" parent="."]
 position = Vector2(14, 35)
 scale = Vector2(0.799691, 0.853395)

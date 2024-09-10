@@ -1,4 +1,1 @@
-res://Scene/main.tscn
-res://Scene/Player.tscn
-res://Scene/car1.tscn
-res://Scene/car2.tscn
+res://Scripts/player.gd

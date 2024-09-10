@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func _on_play_button_pressed() -> void:
 	# Load the game scene
-	get_tree().change_scene_to_file("res://level.tscn")  # Change this to your actual game scene path
+	get_tree().change_scene_to_file("res://scene/main.tscn")  # Change this to your actual game scene path
 
 func _on_exit_button_pressed() -> void:
 	# Exit the game
