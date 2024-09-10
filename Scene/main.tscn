@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1o5cmmtxhvu7"]
+[gd_scene load_steps=10 format=3 uid="uid://d1o5cmmtxhvu7"]
 
-[ext_resource type="PackedScene" path="res://Scene/Player.tscn" id="1_647k2"]
+[ext_resource type="PackedScene" uid="uid://d1mpswf3cyen4" path="res://Scene/Player.tscn" id="1_647k2"]
 [ext_resource type="Texture2D" uid="uid://kmvww403s6u6" path="res://Assets/road.png" id="1_blpgp"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="2_beba1"]
 [ext_resource type="Texture2D" uid="uid://dpxg0tsgx42f3" path="res://Assets/Road 2.png" id="3_lbovs"]
 [ext_resource type="Script" path="res://Scripts/collisionForCar.gd" id="5_a614i"]
+[ext_resource type="PackedScene" uid="uid://bxol8yb2tc1su" path="res://Scene/car2.tscn" id="5_hgljf"]
+[ext_resource type="PackedScene" uid="uid://bc8qfot4g1kts" path="res://Scene/car1.tscn" id="6_yciaq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3h08"]
 size = Vector2(24, 1920)
@@ -53,7 +55,8 @@ shape = SubResource("RectangleShape2D_i3h08")
 position = Vector2(-356, 700)
 shape = SubResource("RectangleShape2D_rx7t1")
 
-[node name="Road2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-97, 2140)
-texture = ExtResource("3_lbovs")
+[node name="Car1" parent="." instance=ExtResource("6_yciaq")]
+position = Vector2(-1940, -589)
+
+[node name="Car2" parent="." instance=ExtResource("5_hgljf")]
+position = Vector2(3, 313)

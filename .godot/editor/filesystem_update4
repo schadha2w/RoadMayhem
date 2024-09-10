@@ -1,3 +1,4 @@
 res://Scene/main.tscn
 res://Scene/Player.tscn
-res://Scripts/collisionForCar.gd
+res://Scene/car1.tscn
+res://Scene/car2.tscn

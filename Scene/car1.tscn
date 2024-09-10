@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc8qfot4g1kts"]
+
+[ext_resource type="Texture2D" uid="uid://drj8h5iikbyxq" path="res://Assets/orangecar.png" id="1_csqbg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06sqq"]
+size = Vector2(94, 208)
+
+[node name="Car1" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(1659, 779)
+shape = SubResource("RectangleShape2D_06sqq")
+
+[node name="Orangecar" type="Sprite2D" parent="."]
+position = Vector2(1660, 781)
+scale = Vector2(0.5425, 0.571)
+texture = ExtResource("1_csqbg")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxol8yb2tc1su"]
+
+[ext_resource type="Texture2D" uid="uid://bxgn7nsk6lme8" path="res://Assets/whitecar.png" id="1_ip7kq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4kst"]
+size = Vector2(102.375, 229.75)
+
+[node name="Car2" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(63.8125, 191.125)
+shape = SubResource("RectangleShape2D_p4kst")
+
+[node name="Whitecar" type="Sprite2D" parent="."]
+position = Vector2(64, 193.5)
+scale = Vector2(0.592, 0.626)
+texture = ExtResource("1_ip7kq")

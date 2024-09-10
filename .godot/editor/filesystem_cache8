@@ -1,14 +1,18 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1725580263
+::res://::1725928544
 icon.svg::CompressedTexture2D::8509153634091156757::1725489240::1725580122::1::::<><>::
-::res://Assets/::1725580122
+::res://Assets/::1725581914
+orangecar.png::CompressedTexture2D::8373069542466873510::1725581729::1725581776::1::::<><>::
 Road 2.png::CompressedTexture2D::8259985366852036682::1725580101::1725580122::1::::<><>::
 road.png::CompressedTexture2D::727976515230122867::1725580101::1725580122::1::::<><>::
-::res://Scene/::1725580263
-main.tscn::PackedScene::9014899005307949348::1725580188::0::1::::<><>::uid://d1mpswf3cyen4::::res://Scene/Player.tscn<>uid://kmvww403s6u6::::res://Assets/road.png<>res://Scripts/camera.gd<>uid://dpxg0tsgx42f3::::res://Assets/Road 2.png
-Player.tscn::PackedScene::9009888582412185735::1725580227::0::1::::<><>::res://Scene/player.gd
-collisionForCar.gd::GDScript::-1::1725580300::0::1::::<>StaticBody2D<>::
-::res://Scripts/::1725580263
+whitecar2.png::CompressedTexture2D::7545340220729499932::1725581729::1725581776::1::::<><>::
+whitecar.png::CompressedTexture2D::4013997531309383649::1725581729::1725581776::1::::<><>::
+::res://Scene/::1725915045
+car1.tscn::PackedScene::2595904003711791696::1725915045::0::1::::<><>::uid://drj8h5iikbyxq::::res://Assets/orangecar.png
+main.tscn::PackedScene::9014899005307949348::1725915045::0::1::::<><>::uid://d1mpswf3cyen4::::res://Scene/Player.tscn<>uid://kmvww403s6u6::::res://Assets/road.png<>res://Scripts/camera.gd<>uid://dpxg0tsgx42f3::::res://Assets/Road 2.png<>res://Scripts/collisionForCar.gd<>uid://bc8qfot4g1kts::::res://Scene/car1.tscn
+Player.tscn::PackedScene::9009888582412185735::1725915045::0::1::::<><>::res://Scripts/player.gd<>uid://dfraweu1dhouu::::res://Assets/whitecar2.png
+::res://Scripts/::1725580356
 camera.gd::GDScript::-1::1725580101::0::1::::<>Camera2D<>::
+collisionForCar.gd::GDScript::-1::1725580356::0::1::::<>StaticBody2D<>::
 player.gd::GDScript::-1::1725580101::0::1::::<>CharacterBody2D<>::
 Road 2.png::CompressedTexture2D::3409538643990778735::1725580101::1725580122::1::::<><>::
