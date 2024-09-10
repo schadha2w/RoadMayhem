@@ -1,1 +1,4 @@
-res://Scripts/player.gd
+res://Scene/main.tscn
+res://Scene/Player.tscn
+res://Scene/menu.tscn
+res://Scene/menu.gd
