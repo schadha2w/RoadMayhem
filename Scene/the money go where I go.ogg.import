@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://mcgicvyn73ae"
+path="res://.godot/imported/the money go where I go.ogg-0920bf04928a16960e104eeb0d0dae24.oggvorbisstr"
+
+[deps]
+
+source_file="res://Scene/the money go where I go.ogg"
+dest_files=["res://.godot/imported/the money go where I go.ogg-0920bf04928a16960e104eeb0d0dae24.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
