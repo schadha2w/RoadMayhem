@@ -4,17 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://dfraweu1dhouu" path="res://Assets/whitecar2.png" id="2_pbg8c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5gue"]
-size = Vector2(84.5, 159.5)
+size = Vector2(98, 201.75)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(-28, -20)
 script = ExtResource("1_3te80")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(26, 21.125)
 shape = SubResource("RectangleShape2D_a5gue")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Whitecar2" type="Sprite2D" parent="."]
-position = Vector2(14, 35)
-scale = Vector2(0.799691, 0.853395)
+position = Vector2(43.5313, 66.0937)
+scale = Vector2(0.945525, 1.00694)
 texture = ExtResource("2_pbg8c")
