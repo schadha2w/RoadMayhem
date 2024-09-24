@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bc8qfot4g1kts" path="res://Scene/car1.tscn" id="6_yciaq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ew082"]
-size = Vector2(548, 20)
+size = Vector2(1238, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3h08"]
 size = Vector2(24, 1920)
@@ -34,7 +34,7 @@ score_ui = NodePath("../CanvasLayer/Label")
 position = Vector2(-40, -284)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D3"]
-position = Vector2(44, 0)
+position = Vector2(38, 0)
 shape = SubResource("RectangleShape2D_ew082")
 
 [node name="Camera2D" type="Camera2D" parent="."]
