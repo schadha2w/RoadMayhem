@@ -13,10 +13,8 @@ var current_score = 0
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("ui_up"):
-		
 		current_speed += acceleration * delta
 	else:
-		
 		current_speed -= deceleration * delta
 	
 	
