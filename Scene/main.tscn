@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1o5cmmtxhvu7"]
+[gd_scene load_steps=13 format=3 uid="uid://d1o5cmmtxhvu7"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_4af3n"]
 [ext_resource type="PackedScene" uid="uid://d1mpswf3cyen4" path="res://Scene/Player.tscn" id="1_647k2"]
@@ -18,19 +18,22 @@ size = Vector2(24, 1920)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rx7t1"]
 size = Vector2(24, 1920)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6iwlr"]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_4af3n")
 car_scene = ExtResource("6_yciaq")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("1_647k2")]
+[node name="Player" parent="." node_paths=PackedStringArray("score_ui") instance=ExtResource("1_647k2")]
 position = Vector2(-104, 845)
+score_ui = NodePath("../CanvasLayer/Label")
 
-[node name="Area2D2" type="Area2D" parent="Player"]
+[node name="Area2D3" type="Area2D" parent="Player"]
 position = Vector2(-40, -284)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D3"]
 position = Vector2(44, 0)
 shape = SubResource("RectangleShape2D_ew082")
 
@@ -84,4 +87,31 @@ position = Vector2(3, 313)
 [node name="Car1" parent="." instance=ExtResource("6_yciaq")]
 position = Vector2(-277, 137)
 
-[connection signal="area_entered" from="Player/Area2D2" to="." method="_on_area_entered"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 272.0
+offset_top = 22.0
+offset_right = 498.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 60
+text = "Score: 0"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -279.0
+offset_top = 1068.0
+offset_right = -239.0
+offset_bottom = 1108.0
+
+[node name="left" type="TouchScreenButton" parent="Control"]
+scale = Vector2(3.73906, -3.63511)
+shape = SubResource("RectangleShape2D_6iwlr")
+
+[node name="right" type="TouchScreenButton" parent="Control"]
+position = Vector2(347, -5)
+scale = Vector2(3.73906, -3.63511)
+shape = SubResource("RectangleShape2D_6iwlr")
+
+[connection signal="area_entered" from="Player/Area2D3" to="." method="_on_area_entered"]
