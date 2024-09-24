@@ -8,6 +8,7 @@ size = Vector2(102.375, 229.75)
 [node name="Car2" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+metadata/car = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(63.8125, 191.125)

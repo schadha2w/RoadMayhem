@@ -6,6 +6,7 @@
 size = Vector2(94, 208)
 
 [node name="Car1" type="CharacterBody2D"]
+metadata/car = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_06sqq")
