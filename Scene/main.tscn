@@ -52,6 +52,7 @@ offset = Vector2(99, 385)
 transform = Transform2D(1, 0, 0, 1, 99, 385)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1, 0.7)
 motion_mirroring = Vector2(0, 960)
 
 [node name="Road" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
