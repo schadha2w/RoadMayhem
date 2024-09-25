@@ -12,14 +12,10 @@ var current_score = 0
 @export var game_over_ui : Node
 @export var final_score_label : Node
 
-@onready var restart_button : TextureButton = $CanvasLayer2/RestartButton
-@onready var mainmenu_button : TextureButton = $CanvasLayer2/MainMenuButton
 
 func _ready():
 	game_over_ui.visible = false
 	
-	restart_button.connect("pressed", Callable(self, "_on_restart_button_pressed"))
-	mainmenu_button.connect("pressed", Callable(self, "_on_main_menu_button_pressed"))
 	
 
 func _physics_process(delta: float) -> void:
@@ -62,11 +58,3 @@ func Score(body: Node2D) -> void:
 		current_score += 1  
 		print(current_score)
 		score_ui.text = "Score: " + str(current_score)
-		
-func _on_restart_button_pressed():
-	get_tree().paused = false
-	get_tree().reload_current_scene()
-	
-func _on_main_menu_button_pressed():
-	get_tree().paused = false
-	get_tree().change_scene("res://Scene/menu.tscn")
