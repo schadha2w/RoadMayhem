@@ -4,11 +4,23 @@ extends CharacterBody2D
 var current_speed = 0.0  
 var acceleration = 200.0 
 var deceleration = 150.0  
-var max_speed = 5500.0  
+var max_speed = 1000.0  
 var min_speed = 50.0  
 var current_score = 0  
 
-@export var score_ui : Node  
+@export var score_ui : Node
+@export var game_over_ui : Node
+@export var final_score_label : Node
+
+@onready var restart_button : TextureButton = $CanvasLayer2/RestartButton
+@onready var mainmenu_button : TextureButton = $CanvasLayer2/MainMenuButton
+
+func _ready():
+	game_over_ui.visible = false
+	
+	restart_button.connect("pressed", Callable(self, "_on_restart_button_pressed"))
+	mainmenu_button.connect("pressed", Callable(self, "_on_main_menu_button_pressed"))
+	
 
 func _physics_process(delta: float) -> void:
 	
@@ -34,10 +46,27 @@ func _physics_process(delta: float) -> void:
 
 func crash(body: Node2D) -> void:
 	if body.has_meta("car"):
-		get_tree().change_scene_to_file("res://Scene/menu.tscn")
+		show_game_over()
+		
+func show_game_over():
+	get_tree().paused = true
+	
+	score_ui.visible = false
+	
+	game_over_ui.visible=true
+	
+	final_score_label.text = "Final Score: " + str(current_score)
 
 func Score(body: Node2D) -> void:
 	if body.has_meta("car"):
 		current_score += 1  
 		print(current_score)
 		score_ui.text = "Score: " + str(current_score)
+		
+func _on_restart_button_pressed():
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+	
+func _on_main_menu_button_pressed():
+	get_tree().paused = false
+	get_tree().change_scene("res://Scene/menu.tscn")

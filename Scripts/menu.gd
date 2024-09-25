@@ -13,12 +13,6 @@ var next_action: Callable = Callable()
 
 func _ready() -> void:
 	
-	print("Play button:", play_button)
-	print("Exit button:", exit_button)
-	print("Settings button:", settings_button)
-	print("AudioStreamPlayer2D:", button_sound_player)
-	
-	
 	play_button.connect("pressed", Callable(self, "_on_play_button_pressed"))
 	exit_button.connect("pressed", Callable(self, "_on_exit_button_pressed"))
 	settings_button.connect("pressed", Callable(self, "_on_settings_button_pressed"))
