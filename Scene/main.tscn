@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1o5cmmtxhvu7"]
+[gd_scene load_steps=15 format=3 uid="uid://d1o5cmmtxhvu7"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_4af3n"]
 [ext_resource type="PackedScene" uid="uid://d1mpswf3cyen4" path="res://Scene/Player.tscn" id="1_647k2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bc8qfot4g1kts" path="res://Scene/car1.tscn" id="6_yciaq"]
 [ext_resource type="Texture2D" uid="uid://bt305ilqwg58d" path="res://Assets/restart.png" id="9_bba7n"]
 [ext_resource type="Texture2D" uid="uid://cr8jm68od4mge" path="res://Assets/mainmenubutton.png" id="10_ev6m6"]
+[ext_resource type="AudioStream" uid="uid://be7r4sk0hewtg" path="res://Scene/click-button-140881.mp3" id="11_x5wri"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ew082"]
 size = Vector2(1238, 20)
@@ -23,8 +24,6 @@ size = Vector2(24, 1920)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_4af3n")
 car_scene = ExtResource("6_yciaq")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
 [node name="Player" parent="." node_paths=PackedStringArray("score_ui", "game_over_ui", "final_score_label") instance=ExtResource("1_647k2")]
 position = Vector2(-104, 845)
@@ -152,6 +151,10 @@ scale = Vector2(0.0923532, 0.0983331)
 texture_normal = ExtResource("10_ev6m6")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer2"]
+process_mode = 3
+stream = ExtResource("11_x5wri")
+volume_db = 13.333
+pitch_scale = 2.52
 
 [connection signal="area_entered" from="Player/Area2D3" to="." method="_on_area_entered"]
 [connection signal="pressed" from="CanvasLayer2/RestartButton" to="." method="_on_restart_button_pressed"]
