@@ -19,6 +19,17 @@ func _ready() -> void:
 	
 	
 	button_sound_player.connect("finished", Callable(self, "_on_sound_finished"))
+	
+func _physics_process(delta: float) -> void:
+	
+	if Input.is_action_pressed("play"):
+		_on_play_button_pressed()
+		
+	elif Input.is_action_pressed("settings"):
+		_on_settings_button_pressed()
+		
+	elif Input.is_action_pressed("quit"):
+		_on_exit_button_pressed()
 
 func _on_play_button_pressed() -> void:
 	_play_button_sound()

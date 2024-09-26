@@ -17,7 +17,13 @@ func _ready():
 	mainmenu_button.connect("pressed", Callable(self, "_on_main_menu_button_pressed"))
 	button_sound_player.connect("finished", Callable(self, "_on_sound_finished"))
 	
-
+func _physics_process(delta: float) -> void:
+	
+	if Input.is_action_pressed("restart"):
+		_on_restart_button_pressed()
+		
+	elif Input.is_action_pressed("menu"):
+		_on_main_menu_button_pressed()
 
 
 func _on_area_entered(area: Area2D) -> void:
