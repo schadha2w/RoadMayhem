@@ -30,6 +30,9 @@ func _physics_process(delta: float) -> void:
 		
 	elif Input.is_action_pressed("quit"):
 		_on_exit_button_pressed()
+		
+	elif Input.is_action_pressed("restart"):
+		get_tree().reload_current_scene()
 
 func _on_play_button_pressed() -> void:
 	_play_button_sound()

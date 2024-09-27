@@ -24,6 +24,9 @@ func _physics_process(delta: float) -> void:
 		
 	elif Input.is_action_pressed("menu"):
 		_on_main_menu_button_pressed()
+		
+	elif Input.is_action_pressed("quit"):
+		get_tree().quit()
 
 
 func _on_area_entered(area: Area2D) -> void:
