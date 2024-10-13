@@ -1,9 +1,9 @@
+Label
 AudioStreamPlayer2D
 TextureButton
 Button
 ColorRect
 TextureRect
-Label
 CanvasLayer
 TouchScreenButton
 Control
@@ -12,4 +12,3 @@ Area2D
 Marker2D
 CharacterBody2D
 Sprite2D
-StaticBody2D

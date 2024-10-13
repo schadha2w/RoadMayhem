@@ -3,6 +3,7 @@ res://Scene/Player.tscn
 res://Scene/menu.tscn
 res://Scene/car2.tscn
 res://Scene/car1.tscn
-res://Scripts/main.gd
-res://Scripts/menu.gd
+res://Scripts/canvas_layer_inputs.gd
+res://Scripts/global.gd
 res://Scripts/player.gd
+res://Scripts/main.gd
