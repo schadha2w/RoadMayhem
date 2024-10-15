@@ -1,5 +1,7 @@
 extends Node2D
 
+
+@onready var global = get_node("/root/Global")
 @onready var points = [$Camera2D/spawn_one, $Camera2D/spawn_two, $Camera2D/spawn_three]
 
 @onready var restart_button : TextureButton = $CanvasLayer2/RestartButton
@@ -16,6 +18,7 @@ func _ready():
 	restart_button.connect("pressed", Callable(self, "_on_restart_button_pressed"))
 	mainmenu_button.connect("pressed", Callable(self, "_on_main_menu_button_pressed"))
 	button_sound_player.connect("finished", Callable(self, "_on_sound_finished"))
+	_load_high_score()
 	
 func _physics_process(delta: float) -> void:
 	
@@ -47,7 +50,9 @@ func _on_restart_button_pressed():
 	
 func _on_main_menu_button_pressed():
 	_play_button_sound()
-	next_action = Callable(self, "_change_to_menu_scene")
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scene/menu.tscn")
+	#next_action = Callable(self, "_change_to_menu_scene")
 	
 	
 func _on_sound_finished() -> void:
@@ -55,11 +60,22 @@ func _on_sound_finished() -> void:
 		next_action.call()
 		
 func restart_the_game() -> void:
-	print("yeah it works")
-	get_tree().paused = false
-	get_tree().reload_current_scene()
-	
+	#print("yeah it works")
+	#get_tree().paused = false
+	#get_tree().reload_current_scene()
+	pass
 	
 func _change_to_menu_scene() -> void:
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scene/menu.tscn")
+	#get_tree().paused = false
+	#get_tree().change_scene_to_file("res://Scene/menu.tscn")
+	pass
+
+
+func _load_high_score():
+	var file = FileAccess.open("user://high_score.save", FileAccess.READ)
+	if file:
+		var highscore = file.get_32()
+		print(highscore)
+		file.close()
+		
+		global.high_score = highscore
