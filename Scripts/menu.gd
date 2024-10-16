@@ -1,10 +1,14 @@
 extends Control
 
+@export var settings_ui : Node
 
 @onready var play_button: Button = $MainMenu1/PlayButton
 @onready var exit_button: Button = $MainMenu1/ExitButton
 @onready var settings_button: Button = $MainMenu1/SettingsButton
-
+@onready var music_player : AudioStreamPlayer2D = $Bgmusic
+@onready var volume_slider : HSlider = $CanvasLayer/HSlider
+@onready var fullscreen_check: CheckButton = $CanvasLayer/CheckButton
+@onready var close_button : TextureButton = $CanvasLayer/TextureButton
 
 @onready var button_sound_player: AudioStreamPlayer2D = $MainMenu1/AudioStreamPlayer2D
 
@@ -16,9 +20,19 @@ func _ready() -> void:
 	play_button.connect("pressed", Callable(self, "_on_play_button_pressed"))
 	exit_button.connect("pressed", Callable(self, "_on_exit_button_pressed"))
 	settings_button.connect("pressed", Callable(self, "_on_settings_button_pressed"))
-	
-	
+	close_button.connect("pressed" , Callable(self, "on_close_button_pressed"))
+	volume_slider.connect("value_changed", Callable(self, "_on_volume_slider_changed"))
 	button_sound_player.connect("finished", Callable(self, "_on_sound_finished"))
+	
+	settings_ui.visible = false
+	
+	volume_slider.min_value = 0
+	volume_slider.max_value = 1
+	volume_slider.step = 0.01
+	volume_slider.value = music_player.volume_db
+	
+	fullscreen_check.connect("toggled", Callable(self, "_on_fullscreen_toggled"))
+	fullscreen_check.button_pressed = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
 	
 func _physics_process(delta: float) -> void:
 	
@@ -46,6 +60,7 @@ func _on_settings_button_pressed() -> void:
 	_play_button_sound()
 	next_action = Callable()
 	print("Hello world")
+	settings_ui.visible = true
 
 
 func _play_button_sound() -> void:
@@ -65,3 +80,21 @@ func _change_to_game_scene() -> void:
 
 func _quit_game() -> void:
 	get_tree().quit()
+	
+func _on_volume_slider_changed(value: float) -> void:
+	var volume_db = linear_to_db(value)
+	music_player.volume_db = volume_db
+	
+func _on_fullscreen_toggled(is_fullscreen: bool) -> void:
+	if is_fullscreen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		
+func _on_close_button_pressed() -> void:
+	_play_button_sound()
+	next_action = Callable(self, "_close_settings")
+	print("Hello")
+	
+func _close_settings() -> void:
+	settings_ui.visible = false
