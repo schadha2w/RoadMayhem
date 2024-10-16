@@ -1,5 +1,7 @@
 extends Control
 
+
+@onready var global = get_node("/root/Global")
 @export var settings_ui : Node
 
 @onready var play_button: Button = $MainMenu1/PlayButton
@@ -20,7 +22,7 @@ func _ready() -> void:
 	play_button.connect("pressed", Callable(self, "_on_play_button_pressed"))
 	exit_button.connect("pressed", Callable(self, "_on_exit_button_pressed"))
 	settings_button.connect("pressed", Callable(self, "_on_settings_button_pressed"))
-	close_button.connect("pressed" , Callable(self, "on_close_button_pressed"))
+	close_button.connect("pressed" , Callable(self, "_on_close_button_pressed"))
 	volume_slider.connect("value_changed", Callable(self, "_on_volume_slider_changed"))
 	button_sound_player.connect("finished", Callable(self, "_on_sound_finished"))
 	
@@ -30,6 +32,7 @@ func _ready() -> void:
 	volume_slider.max_value = 1
 	volume_slider.step = 0.01
 	volume_slider.value = music_player.volume_db
+	global.volume_setting = volume_slider.value
 	
 	fullscreen_check.connect("toggled", Callable(self, "_on_fullscreen_toggled"))
 	fullscreen_check.button_pressed = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN

@@ -79,3 +79,5 @@ func _load_high_score():
 		file.close()
 		
 		global.high_score = highscore
+		
+		
