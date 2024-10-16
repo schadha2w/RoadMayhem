@@ -20,7 +20,7 @@ func _ready() -> void:
 	play_button.connect("pressed", Callable(self, "_on_play_button_pressed"))
 	exit_button.connect("pressed", Callable(self, "_on_exit_button_pressed"))
 	settings_button.connect("pressed", Callable(self, "_on_settings_button_pressed"))
-	close_button.connect("pressed" , Callable(self, "on_close_button_pressed"))
+	close_button.connect("pressed" , Callable(self, "_on_close_button_pressed"))
 	volume_slider.connect("value_changed", Callable(self, "_on_volume_slider_changed"))
 	button_sound_player.connect("finished", Callable(self, "_on_sound_finished"))
 	
@@ -47,6 +47,12 @@ func _physics_process(delta: float) -> void:
 		
 	elif Input.is_action_pressed("restart"):
 		get_tree().reload_current_scene()
+		
+	elif Input.is_action_pressed("close"):
+		_on_close_button_pressed()
+		
+	elif Input.is_action_pressed("fullscreen"):
+		_on_fullscreen_toggled(true)
 
 func _on_play_button_pressed() -> void:
 	_play_button_sound()
