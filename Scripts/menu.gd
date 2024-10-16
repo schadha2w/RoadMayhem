@@ -50,6 +50,12 @@ func _physics_process(delta: float) -> void:
 		
 	elif Input.is_action_pressed("restart"):
 		get_tree().reload_current_scene()
+		
+	elif Input.is_action_pressed("close"):
+		_on_close_button_pressed()
+		
+	elif Input.is_action_pressed("fullscreen"):
+		_on_fullscreen_toggled(true)
 
 func _on_play_button_pressed() -> void:
 	_play_button_sound()
