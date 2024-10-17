@@ -19,6 +19,7 @@ func _ready():
 	mainmenu_button.connect("pressed", Callable(self, "_on_main_menu_button_pressed"))
 	button_sound_player.connect("finished", Callable(self, "_on_sound_finished"))
 	_load_high_score()
+	_load_settings()
 	
 func _physics_process(delta: float) -> void:
 	
@@ -80,4 +81,13 @@ func _load_high_score():
 		
 		global.high_score = highscore
 		
+func _load_settings():
+	var file = FileAccess.open("user://settings.save", FileAccess.READ)
+	if file:
+		var volume = file.get_var()
+		print("volume" + str(volume))
+		file.close()
+		
+		global.volume_setting = volume
+		print("var " + str(global.volume_setting))
 		

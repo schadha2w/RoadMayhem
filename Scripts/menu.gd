@@ -14,11 +14,14 @@ extends Control
 
 @onready var button_sound_player: AudioStreamPlayer2D = $MainMenu1/AudioStreamPlayer2D
 
+var first_load = true
+
 
 var next_action: Callable = Callable()  
 
 func _ready() -> void:
-	
+	_load_settings()
+	print(global.volume_setting)
 	play_button.connect("pressed", Callable(self, "_on_play_button_pressed"))
 	exit_button.connect("pressed", Callable(self, "_on_exit_button_pressed"))
 	settings_button.connect("pressed", Callable(self, "_on_settings_button_pressed"))
@@ -32,10 +35,13 @@ func _ready() -> void:
 	volume_slider.max_value = 1
 	volume_slider.step = 0.01
 	volume_slider.value = music_player.volume_db
-	global.volume_setting = volume_slider.value
+	volume_slider.value = global.volume_setting
 	
 	fullscreen_check.connect("toggled", Callable(self, "_on_fullscreen_toggled"))
 	fullscreen_check.button_pressed = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
+	
+	
+	
 	
 func _physics_process(delta: float) -> void:
 	
@@ -91,8 +97,13 @@ func _quit_game() -> void:
 	get_tree().quit()
 	
 func _on_volume_slider_changed(value: float) -> void:
+	if first_load:
+		volume_slider.value = global.volume_setting
+		first_load = false
 	var volume_db = linear_to_db(value)
 	music_player.volume_db = volume_db
+	global.volume_setting = volume_slider.value
+	_save_settings(global.volume_setting)
 	
 func _on_fullscreen_toggled(is_fullscreen: bool) -> void:
 	if is_fullscreen:
@@ -107,3 +118,21 @@ func _on_close_button_pressed() -> void:
 	
 func _close_settings() -> void:
 	settings_ui.visible = false
+	
+func _save_settings(settings):
+	var file = FileAccess.open("user://settings.save", FileAccess.WRITE)
+	if file:
+		print("Saving settings", global.volume_setting)
+		file.store_var(global.volume_setting)
+		file.close()
+
+
+func _load_settings():
+	var file = FileAccess.open("user://settings.save", FileAccess.READ)
+	if file:
+		var volume = file.get_var()
+		print("volume" + str(volume))
+		file.close()
+		
+		global.volume_setting = volume
+		print("var " + str(global.volume_setting))

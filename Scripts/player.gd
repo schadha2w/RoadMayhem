@@ -60,7 +60,7 @@ func show_game_over():
 		
 	high_score_label.text = "High Score: " + str(global.high_score)
 	
-	_save_settings(global.high_score)
+	_save_high_score(global.high_score)
 
 func Score(body: Node2D) -> void:
 	if body.has_meta("car"):
@@ -69,7 +69,7 @@ func Score(body: Node2D) -> void:
 		score_ui.text = "Score: " + str(current_score)
 		
 		
-func _save_settings(highScore):
+func _save_high_score(highScore):
 	var file = FileAccess.open("user://high_score.save", FileAccess.WRITE)
 	if file:
 		print("Saving high score", global.high_score)
