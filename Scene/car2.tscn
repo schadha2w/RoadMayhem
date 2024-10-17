@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bxgn7nsk6lme8" path="res://Assets/whitecar.png" id="1_ip7kq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4kst"]
-size = Vector2(102.375, 229.75)
+size = Vector2(94, 216)
 
 [node name="Car2" type="Node2D"]
 
@@ -11,7 +11,7 @@ size = Vector2(102.375, 229.75)
 metadata/car = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(63.8125, 191.125)
+position = Vector2(63, 193)
 shape = SubResource("RectangleShape2D_p4kst")
 
 [node name="Whitecar" type="Sprite2D" parent="."]
