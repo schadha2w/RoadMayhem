@@ -34,6 +34,16 @@ func _ready() -> void:
 	fullscreen_check.connect("toggled", Callable(self, "_on_fullscreen_toggled"))
 	fullscreen_check.button_pressed = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
 	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("fullscreen"):
+		toggle_fullscreen()
+
+func toggle_fullscreen() -> void:
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("play"):
@@ -50,9 +60,6 @@ func _physics_process(delta: float) -> void:
 		
 	elif Input.is_action_pressed("close"):
 		_on_close_button_pressed()
-		
-	elif Input.is_action_pressed("fullscreen"):
-		_on_fullscreen_toggled(true)
 
 func _on_play_button_pressed() -> void:
 	_play_button_sound()
