@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
 @onready var global = get_node("/root/Global")
+@onready var crash_sound : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var current_speed = 0.0  
-var acceleration = 200.0 
-var deceleration = 150.0  
+var acceleration = 50.0 
+#var deceleration = 150.0  
 var max_speed = 10000.0  
 var min_speed = 1000.0  
 var current_score = 0  
@@ -17,15 +18,15 @@ var current_score = 0
 
 func _ready():
 	game_over_ui.visible = false
-	
+	crash_sound.process_mode = Node.PROCESS_MODE_ALWAYS
 	
 
 func _physics_process(delta: float) -> void:
 	
-	if Input.is_action_pressed("ui_up"):
-		current_speed += acceleration * delta
-	else:
-		current_speed -= deceleration * delta
+	#if Input.is_action_pressed("ui_up"):
+	current_speed += acceleration * delta
+	#else:
+		#current_speed -= deceleration * delta
 	
 	
 	current_speed = clamp(current_speed, min_speed, max_speed)
@@ -44,9 +45,12 @@ func _physics_process(delta: float) -> void:
 
 func crash(body: Node2D) -> void:
 	if body.has_meta("car"):
+		
 		show_game_over()
 		
+		
 func show_game_over():
+	crash_sound.play()
 	get_tree().paused = true
 	
 	score_ui.visible = false
