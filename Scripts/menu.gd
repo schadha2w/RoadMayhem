@@ -1,6 +1,6 @@
 extends Control
 
-
+#all variables here
 @onready var global = get_node("/root/Global")
 @export var settings_ui : Node
 
@@ -19,6 +19,7 @@ var first_load = true
 
 var next_action: Callable = Callable()  
 
+#functions that runu when game starts
 func _ready() -> void:
 	_load_settings()
 	print(global.volume_setting)
@@ -42,7 +43,7 @@ func _ready() -> void:
 	
 	
 	
-	
+	#inputs here
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("play"):
@@ -60,7 +61,7 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_pressed("close"):
 		_on_close_button_pressed()
 		
-
+#fullscreen toggle
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("fullscreen"):
 		toggle_fullscreen()
@@ -71,7 +72,7 @@ func toggle_fullscreen() -> void:
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		
-		
+#menu buttons functioning
 func _on_play_button_pressed() -> void:
 	_play_button_sound()
 	next_action = Callable(self, "_change_to_game_scene")
@@ -105,6 +106,8 @@ func _change_to_game_scene() -> void:
 func _quit_game() -> void:
 	get_tree().quit()
 	
+
+#settings of the game
 func _on_volume_slider_changed(value: float) -> void:
 	if first_load:
 		volume_slider.value = global.volume_setting
@@ -128,6 +131,8 @@ func _on_close_button_pressed() -> void:
 func _close_settings() -> void:
 	settings_ui.visible = false
 	
+	
+#saving the settings
 func _save_settings(settings):
 	var file = FileAccess.open("user://settings.save", FileAccess.WRITE)
 	if file:
