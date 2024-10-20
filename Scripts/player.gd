@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var crash_sound : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var current_speed = 0.0  
-var acceleration = 50.0 
+var acceleration = 20.0 
 #var deceleration = 150.0  
 var max_speed = 10000.0  
 var min_speed = 1000.0  
