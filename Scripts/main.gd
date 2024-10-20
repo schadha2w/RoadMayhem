@@ -1,6 +1,6 @@
 extends Node2D
 
-
+#all variables here
 @onready var global = get_node("/root/Global")
 @onready var points = [$Camera2D/spawn_one, $Camera2D/spawn_two, $Camera2D/spawn_three]
 
@@ -13,7 +13,7 @@ extends Node2D
 var rand = RandomNumberGenerator.new()
 var next_action: Callable = Callable()  
 
-
+#when game starts
 func _ready():
 	restart_button.connect("pressed", Callable(self, "_on_restart_button_pressed"))
 	mainmenu_button.connect("pressed", Callable(self, "_on_main_menu_button_pressed"))
@@ -21,6 +21,7 @@ func _ready():
 	_load_high_score()
 	_load_settings()
 	
+	#inputs here
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("restart"):
@@ -32,18 +33,20 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_pressed("quit"):
 		get_tree().quit()
 
-
+#car spawning
 func _on_area_entered(area: Area2D) -> void:
 	var point = points[rand.randi_range(0,2)]
 	var car = car_scene.instantiate()
 	car.global_position = point.global_position
 	add_child(car)
 	
+	#button sound
 func _play_button_sound() -> void:
 	if button_sound_player.is_playing():
 		button_sound_player.stop()
 	button_sound_player.play()
 	
+	#game over ui buttons functioning
 func _on_restart_button_pressed():
 	_play_button_sound()
 	next_action = Callable(self, "restart_the_game")

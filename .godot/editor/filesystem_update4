@@ -1,4 +1,7 @@
 res://Scene/main.tscn
+res://Scripts/main.gd
+res://Scripts/menu.gd
+res://Scripts/player.gd
 res://Scene/Player.tscn
 res://Scene/menu.tscn
 res://Scene/car2.tscn
