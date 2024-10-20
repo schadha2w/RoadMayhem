@@ -44,7 +44,6 @@ func _on_sound_finished() -> void:
 		next_action.call()
 		
 func restart_the_game() -> void:
-	print("yeah it works")
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 	

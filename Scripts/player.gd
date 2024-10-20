@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-#all variables here
+# all variables here
 @onready var global = get_node("/root/Global")
 @onready var crash_sound : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
@@ -17,13 +17,13 @@ var current_score = 0
 @export var final_score_label : Node
 @export var high_score_label : Node
 
-#when game starts
+# when game starts
 func _ready():
 	game_over_ui.visible = false
 	crash_sound.process_mode = Node.PROCESS_MODE_ALWAYS
 	
 
-#movement of car
+# movement of car
 func _physics_process(delta: float) -> void:
 	
 	#if Input.is_action_pressed("ui_up"):
@@ -46,13 +46,12 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-#crash func
+# crash func
 func crash(body: Node2D) -> void:
 	if body.has_meta("car"):
-		
 		show_game_over()
 		
-#game over func
+# game over func
 func show_game_over():
 	crash_sound.play()
 	get_tree().paused = true
@@ -70,14 +69,14 @@ func show_game_over():
 	
 	_save_high_score(global.high_score)
 
-#actively shows the score and modifies it
+# actively shows the score and modifies it
 func Score(body: Node2D) -> void:
 	if body.has_meta("car"):
 		current_score += 1  
 		print(current_score)
 		score_ui.text = "Score: " + str(current_score)
 		
-#saves high score in user's device
+# saves high score in user's device
 func _save_high_score(highScore):
 	var file = FileAccess.open("user://high_score.save", FileAccess.WRITE)
 	if file:
