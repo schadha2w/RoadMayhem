@@ -1,9 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1729455830
+::res://::1729540032
 Car Engine 6000.mp3::AudioStreamMP3::7600785207326494995::1729207004::1729455830::1::::<><>::
 e7e3cdf2-95d4-4a11-b50b-ef7354287793-transformed.jpeg::CompressedTexture2D::8199512592952345619::1729114654::1729455832::1::::<><>::
 icon.svg::CompressedTexture2D::8509153634091156757::1725489240::1729455831::1::::<><>::
-::res://Assets/::1729454589
+::res://Assets/::1729455833
 car-accident-with-squeal-and-crash-6054.mp3::AudioStreamMP3::7480117981699224480::1729206901::1729455830::1::::<><>::
 car-interior-sound-246025.mp3::AudioStreamMP3::5972257139221220837::1729206901::1729455831::1::::<><>::
 delete-button.png::CompressedTexture2D::452293707491610195::1729113508::1729455831::1::::<><>::
@@ -15,23 +15,23 @@ Road 2.png::CompressedTexture2D::7623526340355640997::1727139498::1729455831::1:
 road.png::CompressedTexture2D::727976515230122867::1725580101::1729455831::1::::<><>::
 whitecar2.png::CompressedTexture2D::7545340220729499932::1725581729::1729455831::1::::<><>::
 whitecar.png::CompressedTexture2D::4013997531309383649::1725581729::1729455831::1::::<><>::
-::res://Scene/::1729454603
+::res://Scene/::1729468036
 car1.tscn::PackedScene::2595904003711791696::1729454603::0::1::::<><>::uid://drj8h5iikbyxq::::res://Assets/orangecar.png
 car2.tscn::PackedScene::4030393457401439424::1729454603::0::1::::<><>::uid://bxgn7nsk6lme8::::res://Assets/whitecar.png
 click-button-140881.mp3::AudioStreamMP3::2734321085289185300::1725935790::1729455830::1::::<><>::
 highway-167255.ogg::AudioStreamOggVorbis::6158763263296068311::1725929983::1729455831::1::::<><>::
 Main Menu 1.png::CompressedTexture2D::2504045447228145117::1725929983::1729455831::1::::<><>::
-main.tscn::PackedScene::9014899005307949348::1729454603::0::1::::<><>::res://Scripts/main.gd<>uid://d1mpswf3cyen4::::res://Scene/Player.tscn<>uid://kmvww403s6u6::::res://Assets/road.png<>res://Scripts/camera.gd<>uid://dgu5mn7sbp8n6::::res://Assets/Road 2.png<>uid://detopkstwr1ou::::res://Assets/car-accident-with-squeal-and-crash-6054.mp3<>res://Scripts/collisionForCar.gd<>uid://bxol8yb2tc1su::::res://Scene/car2.tscn<>uid://bc8qfot4g1kts::::res://Scene/car1.tscn<>uid://bt305ilqwg58d::::res://Assets/restart.png<>res://Scripts/canvas_layer_inputs.gd<>uid://cr8jm68od4mge::::res://Assets/mainmenubutton.png<>uid://be7r4sk0hewtg::::res://Scene/click-button-140881.mp3<>uid://cysjr776a8gmw::::res://Assets/GMC Savana Slow Drive 1.wav
+main.tscn::PackedScene::9014899005307949348::1729468036::0::1::::<><>::res://Scripts/main.gd<>uid://d1mpswf3cyen4::::res://Scene/Player.tscn<>uid://kmvww403s6u6::::res://Assets/road.png<>res://Scripts/camera.gd<>uid://dgu5mn7sbp8n6::::res://Assets/Road 2.png<>uid://detopkstwr1ou::::res://Assets/car-accident-with-squeal-and-crash-6054.mp3<>res://Scripts/collisionForCar.gd<>uid://bxol8yb2tc1su::::res://Scene/car2.tscn<>uid://bc8qfot4g1kts::::res://Scene/car1.tscn<>uid://bt305ilqwg58d::::res://Assets/restart.png<>res://Scripts/canvas_layer_inputs.gd<>uid://cr8jm68od4mge::::res://Assets/mainmenubutton.png<>uid://be7r4sk0hewtg::::res://Scene/click-button-140881.mp3<>uid://cysjr776a8gmw::::res://Assets/GMC Savana Slow Drive 1.wav
 menu.tscn::PackedScene::4735574116691114194::1729454603::0::1::::<><>::uid://bbw8i6v8xh7cr::::res://Scene/Main Menu 1.png<>res://Scripts/menu.gd<>uid://ct0l6wnr1yty2::::res://Scene/highway-167255.ogg<>uid://be7r4sk0hewtg::::res://Scene/click-button-140881.mp3<>uid://gpdhgihahw0r::::res://Assets/delete-button.png
 Player.tscn::PackedScene::9009888582412185735::1729454603::0::1::::<><>::res://Scripts/player.gd<>uid://dfraweu1dhouu::::res://Assets/whitecar2.png
 the money go where I go.ogg::AudioStreamOggVorbis::846773606069051780::1725929983::1729455831::1::::<><>::
 upload_img_93104887_08_28_2024_17_05_30_197766_4185241739344716361-transformed (1).png::CompressedTexture2D::1446044442854182412::1725929983::1729455831::1::::<><>::
-::res://Scripts/::1729455794
+::res://Scripts/::1729468036
 camera.gd::GDScript::-1::1725580101::0::1::::<>Camera2D<>::
-canvas_layer_inputs.gd::GDScript::-1::1728849602::0::1::::<>CanvasLayer<>::
+canvas_layer_inputs.gd::GDScript::-1::1729467462::0::1::::<>CanvasLayer<>::
 collisionForCar.gd::GDScript::-1::1725580356::0::1::::<>StaticBody2D<>::
 global.gd::GDScript::-1::1729206865::0::1::::<>Node<>::
-main.gd::GDScript::-1::1729455794::0::1::::<>Node2D<>::
-menu.gd::GDScript::-1::1729455794::0::1::::<>Control<>::
-player.gd::GDScript::-1::1729455794::0::1::::<>CharacterBody2D<>::
+main.gd::GDScript::-1::1729468036::0::1::::<>Node2D<>::
+menu.gd::GDScript::-1::1729467504::0::1::::<>Control<>::
+player.gd::GDScript::-1::1729467504::0::1::::<>CharacterBody2D<>::
 Road 2.png::CompressedTexture2D::3409538643990778735::1725580101::1729455831::1::::<><>::
