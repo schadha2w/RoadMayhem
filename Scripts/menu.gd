@@ -91,7 +91,6 @@ func _on_exit_button_pressed() -> void:
 func _on_settings_button_pressed() -> void:
 	_play_button_sound()
 	next_action = Callable()
-	print("Hello world")
 	settings_ui.visible = true
 
 
