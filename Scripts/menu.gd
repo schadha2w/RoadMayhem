@@ -1,6 +1,6 @@
 extends Control
 
-# all variables here
+# All variables here
 @onready var global = get_node("/root/Global")
 @export var settings_ui : Node
 
@@ -17,7 +17,7 @@ var first_load = true
 var next_action: Callable = Callable()  
 
 
-# functions that runu when game starts
+# Functions that run when game starts
 func _ready() -> void:
 	_load_settings()
 	print(global.volume_setting)
@@ -37,13 +37,12 @@ func _ready() -> void:
 	volume_slider.value = global.volume_setting
 	
 	fullscreen_check.connect("toggled", Callable(self, "_on_fullscreen_toggled"))
-	#fullscreen_check.button_pressed = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
 	
 	var is_fullscreen = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
 	fullscreen_check.button_pressed = is_fullscreen
 	
 	
-# takes all the inputs from the player
+# Takes all the inputs from the player
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("play"):
@@ -62,12 +61,13 @@ func _physics_process(delta: float) -> void:
 		_on_close_button_pressed()
 		
 		
-#fullscreen toggle
+# This function acts as a shortcut for fullscreen when "f" key is pressed. 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("fullscreen"):
 		toggle_fullscreen()
 
 
+# This function makes the window fullscreen when "f" button is pressed. 
 func toggle_fullscreen() -> void:
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
@@ -75,17 +75,19 @@ func toggle_fullscreen() -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		
 		
-# menu buttons functioning
+# This functions starts the gameplay when "Play Game" is pressed on the main menu. 
 func _on_play_button_pressed() -> void:
 	_play_button_sound()
 	next_action = Callable(self, "_change_to_game_scene")
 
 
+# This button quits the game when "Quit Game" is pressed on the main menu. 
 func _on_exit_button_pressed() -> void:
 	_play_button_sound()
 	next_action = Callable(self, "_quit_game")
 
 
+# This function opens the settings menu when "settings" button is pressed on the main menu. 
 func _on_settings_button_pressed() -> void:
 	_play_button_sound()
 	next_action = Callable()
@@ -93,26 +95,30 @@ func _on_settings_button_pressed() -> void:
 	settings_ui.visible = true
 
 
+# This function plays a sound when any button is pressed on any menus. 
 func _play_button_sound() -> void:
 	if button_sound_player.is_playing():
 		button_sound_player.stop()
 	button_sound_player.play()
 
 
+# This function calls the next action when the sound effect is finished.
 func _on_sound_finished() -> void:
 	if next_action.is_valid():
 		next_action.call()
 
 
+# This function stars the game by switching to Main Game Scene when "Play Game" is pressed.
 func _change_to_game_scene() -> void:
 	get_tree().change_scene_to_file("res://scene/main.tscn")
 
 
+# This function quits the game when "Quit Game" is pressed. 
 func _quit_game() -> void:
 	get_tree().quit()
-	
 
-# settings of the game
+
+# Settings of the game (this function is triggered when player changes the volume slider)
 func _on_volume_slider_changed(value: float) -> void:
 	if first_load:
 		volume_slider.value = global.volume_setting
@@ -123,24 +129,26 @@ func _on_volume_slider_changed(value: float) -> void:
 	_save_settings(global.volume_setting)
 	
 	
+# This function changes to fullscreen when the fullscreen toggle is pressed in the settings. 
 func _on_fullscreen_toggled(is_fullscreen: bool) -> void:
 	if is_fullscreen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		
-		
+
+# This function hides the settings menu UI
 func _on_close_button_pressed() -> void:
 	_play_button_sound()
 	next_action = Callable(self, "_close_settings")
-	print("Hello")
 	
-	
+
+# This function is an extention to the hide sttings functions. 
 func _close_settings() -> void:
 	settings_ui.visible = false
 	
 	
-# saving the settings
+# This function saves the settings prefrences of the user to a file on the user's computer
 func _save_settings(settings):
 	var file = FileAccess.open("user://settings.save", FileAccess.WRITE)
 	if file:
@@ -149,6 +157,7 @@ func _save_settings(settings):
 		file.close()
 
 
+# This function saves loads the settings prefrences of the user from file saved on computer. 
 func _load_settings():
 	var file = FileAccess.open("user://settings.save", FileAccess.READ)
 	if file:

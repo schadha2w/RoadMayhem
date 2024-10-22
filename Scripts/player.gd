@@ -1,12 +1,11 @@
 extends CharacterBody2D
 
-# all variables here
+# All variables here
 @onready var global = get_node("/root/Global")
 @onready var crash_sound : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var current_speed = 0.0  
 var acceleration = 20.0 
-#var deceleration = 150.0  
 var max_speed = 10000.0  
 var min_speed = 1000.0  
 var current_score = 0  
@@ -16,19 +15,17 @@ var current_score = 0
 @export var high_score_label : Node
 
 
-# when game starts
+# This function runs when the game starts. 
 func _ready():
 	game_over_ui.visible = false
 	crash_sound.process_mode = Node.PROCESS_MODE_ALWAYS
 	
 
-# movement of car
+# This function is respinsible for the movement of the car.
+# It takes input from the user of weather the car is going left or right and folllows it. 
 func _physics_process(delta: float) -> void:
 	
-	#if Input.is_action_pressed("ui_up"):
 	current_speed += acceleration * delta
-	#else:
-		#current_speed -= deceleration * delta
 
 	current_speed = clamp(current_speed, min_speed, max_speed)
 	var direction := Input.get_axis("ui_left", "ui_right")
@@ -37,13 +34,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-# crash func
+# This function runs when the car crashed into another car. 
 func crash(body: Node2D) -> void:
 	if body.has_meta("car"):
 		show_game_over()
 		
 
-# game over func
+# This function is shows the game over menu when the player crashes. 
 func show_game_over():
 	crash_sound.play()
 	get_tree().paused = true
@@ -62,7 +59,7 @@ func show_game_over():
 	_save_high_score(global.high_score)
 
 
-# actively shows the score and modifies it
+# This function shows the user their current score and updates in real time. 
 func Score(body: Node2D) -> void:
 	if body.has_meta("car"):
 		current_score += 1  
