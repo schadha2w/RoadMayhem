@@ -114,6 +114,7 @@ text = "Score: 0"
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 process_mode = 3
+visible = false
 script = ExtResource("9_rjiav")
 
 [node name="Label" type="Label" parent="CanvasLayer2"]
