@@ -74,7 +74,8 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("fullscreen"):
 		toggle_fullscreen()
 
-
+# This function takes input from the user through the dropdown menu in the settings
+# After taking input it sets a global variable respective to which gamemode they want to play in. 
 func _on_game_mode_changed(index):
 	# Get the selected item text
 	var selected_text = game_mode.get_item_text(index)
