@@ -1,9 +1,10 @@
+OptionButton
+HSlider
+Label
 AudioStreamPlayer2D
 TextureButton
 CheckBox
 CheckButton
-Label
-HSlider
 CanvasLayer
 Button
 ColorRect

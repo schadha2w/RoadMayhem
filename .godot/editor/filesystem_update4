@@ -3,3 +3,6 @@ res://Scene/Player.tscn
 res://Scene/menu.tscn
 res://Scene/car2.tscn
 res://Scene/car1.tscn
+res://Scripts/menu.gd
+res://Scripts/global.gd
+res://Scripts/player.gd

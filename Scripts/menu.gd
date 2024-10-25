@@ -12,6 +12,8 @@ extends Control
 @onready var fullscreen_check: CheckButton = $CanvasLayer/CheckButton
 @onready var close_button : TextureButton = $CanvasLayer/TextureButton
 @onready var button_sound_player: AudioStreamPlayer2D = $MainMenu1/AudioStreamPlayer2D
+@onready var game_mode: OptionButton = $CanvasLayer/OptionButton
+
 
 var first_load = true
 var next_action: Callable = Callable()  
@@ -36,10 +38,16 @@ func _ready() -> void:
 	volume_slider.value = music_player.volume_db
 	volume_slider.value = global.volume_setting
 	
+	game_mode.add_item("Easy")
+	game_mode.add_item("Normal")
+	game_mode.add_item("Hard")
+	game_mode.select(1)
+	
 	fullscreen_check.connect("toggled", Callable(self, "_on_fullscreen_toggled"))
 	
 	var is_fullscreen = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
 	fullscreen_check.button_pressed = is_fullscreen
+	
 	
 	
 # Takes all the inputs from the player
@@ -65,6 +73,31 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("fullscreen"):
 		toggle_fullscreen()
+
+# This function takes input from the user through the dropdown menu in the settings
+# After taking input it sets a global variable respective to which gamemode they want to play in. 
+func _on_game_mode_changed(index):
+	# Get the selected item text
+	var selected_text = game_mode.get_item_text(index)
+
+	# Check the selected option and perform specific actions
+	if selected_text == "Easy":
+		print("Easy Mode selected")
+		# Perform action for Easy Mode
+		global.game_mode_global = 1
+
+	elif selected_text == "Normal":
+		print("Normal Mode selected")
+		# Perform action for Normal Mode
+		global.game_mode_global = 2
+
+	elif selected_text == "Hard":
+		print("Hard Mode selected")
+		# Perform action for Hard Mode
+		global.game_mode_global = 3
+		
+	else:
+		print("error occoured")
 
 
 # This function makes the window fullscreen when "f" button is pressed. 
