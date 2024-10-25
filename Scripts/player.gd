@@ -9,19 +9,19 @@ var acceleration
 var max_speed 
 var min_speed
 var easy = {
-	"min_speed": 500,
+	"min_speed": 700,
 	"max_speed": 5000,
 	"acceleration": 10
 }
 var normal = {
-	"min_speed": 700,
+	"min_speed": 900,
 	"max_speed": 7000,
-	"acceleration": 15
+	"acceleration": 20
 }
 var hard = {
-	"min_speed": 1000,
+	"min_speed": 1100,
 	"max_speed": 10000,
-	"acceleration": 20
+	"acceleration": 30
 }
 
 var current_score = 0  
